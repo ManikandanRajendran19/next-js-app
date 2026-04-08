@@ -11,5 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build . -t manidocker8050/nextjs-application
-      - run: echo "${{secrets.DOCKERHUB_PASSWORD}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin 
+      - run: echo "${{secrets.DOCKER_PASSWORD}}" | docker login -u ${{secrets.DOCKER_USER}} --password-stdin 
       - run: docker docker push manidocker8050/nextjs-application:latest
